@@ -7,9 +7,7 @@ let hpCharacters = [];
 searchBar.addEventListener("keyup", (e) => {
 
     const searchString = e.target.value.toLowerCase();
-
     console.log(searchString);
-
     const filteredCharacters = hpCharacters.filter(character => {
         return (
             character.name.toLowerCase().includes(searchString) ||
@@ -69,6 +67,7 @@ const displayCharacters = (characters) => {
                     return `<li class="character">
                 <h2>${character.name}</h2>
                 <p>House: ${character.house}</p>
+                <p>Birth Date: ${character.dateOfBirth}</p>
                 <img src="${character.image}"></img>
             </li>`;
                 }
@@ -88,17 +87,16 @@ const displayCharacters = (characters) => {
                     return `<li class="character">
                 <h2>${character.name}</h2>
                 <p>House: ${character.house}</p>
+                <p>Birth Date: ${character.dateOfBirth}</p>
                 <img src="${character.image}"></img>
             </li>`;
                 }
             })
-    
+
             .join('');
-    
         charactersList.innerHTML = htmlString;
     })
 };
-
 
 
 
